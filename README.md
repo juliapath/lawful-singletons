@@ -1,0 +1,1 @@
+This is a work-in-progress / experiment library to provide laws for the singletons package.

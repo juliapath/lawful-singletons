@@ -1,0 +1,77 @@
+cabal-version:  2.2
+name:           lawful-singletons
+version:        0.1.0.0
+description:    Laws for singletons
+author:         Julia Path
+maintainer:     julia@jpath.de
+copyright:      2021 Julia Path
+license:        BSD-3-Clause
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+
+common common
+  ghc-options: -O2 -Wall -Wno-name-shadowing -Wno-unused-do-bind -Wno-dodgy-imports -Wno-unused-imports -fenable-th-splice-warnings
+  build-depends:
+      base >=4.7 && <5
+    , singletons
+    , singletons-th
+    , singletons-base
+    , constraints
+  default-language: Haskell2010
+  default-extensions: 
+    NoImplicitPrelude
+    DefaultSignatures
+    OverloadedStrings
+    GeneralizedNewtypeDeriving
+    DerivingStrategies
+    DeriveAnyClass
+    DeriveGeneric
+    DeriveDataTypeable
+    DeriveTraversable
+    DerivingVia
+    TypeFamilies
+    DataKinds
+    KindSignatures
+    GADTs
+    TemplateHaskell
+    QuasiQuotes
+    TypeApplications
+    ScopedTypeVariables
+    MultiParamTypeClasses
+    FlexibleInstances
+    FlexibleContexts
+    NamedFieldPuns
+    RecordWildCards
+    BlockArguments
+    MultiWayIf
+    LambdaCase
+    ViewPatterns
+    BangPatterns
+    Arrows
+    ApplicativeDo
+    EmptyCase
+    AllowAmbiguousTypes
+    RankNTypes
+    EmptyDataDeriving
+    StandaloneDeriving
+    StandaloneKindSignatures
+    QuantifiedConstraints
+    PatternSynonyms
+    ConstraintKinds
+    FunctionalDependencies
+    InstanceSigs
+    TypeOperators
+    PolyKinds
+
+library
+  import: common
+  other-modules:
+  exposed-modules:
+      Data.Singletons.Laws
+      Data.Eq.Singletons.Laws
+      Data.Ord.Singletons.Laws
+      Data.Singletons.Base.Enum.Laws
+  hs-source-dirs:
+      src
